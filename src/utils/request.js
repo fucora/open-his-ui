@@ -1,26 +1,25 @@
 import axios from 'axios'
-import { MessageBox, Message } from 'element-ui'
+import { MessageBox, Message, Notification } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 10000 // request timeout
+  timeout: 50000 // 设置请求超时时间 ms
 })
 
 // 请求拦截
 service.interceptors.request.use(
   config => {
-    // 在发送请求之前把token放到请求头里面去  后端要验证token
+    // 在发送请求之前把token放到请求头里面去
     if (store.getters.token) {
+      // 这里的token和后端的要保持一样
       config.headers['token'] = getToken()
     }
     return config
   },
   error => {
-    // do something with request error
     console.log(error) // for debug
     return Promise.reject(error)
   }

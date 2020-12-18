@@ -206,6 +206,7 @@ export default {
     },
     // 条件查询
     handleQuery() {
+      this.queryParams.pageNum = 1
       this.getOperLogList()
     },
     // 重置查询条件

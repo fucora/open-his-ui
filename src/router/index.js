@@ -344,19 +344,19 @@ export const asyncRoutes = [
       },
       {
         path: 'myscheduling',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/scheduling/myscheduling'),
         name: '/doctor/myscheduling',
         meta: { title: '我的排班', icon: 'list' }
       },
       {
         path: 'scheduling',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/scheduling/index'),
         name: '/doctor/scheduling',
         meta: { title: '医生排班', icon: 'list' }
       },
       {
         path: 'patient',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/patient/index'),
         name: '/doctor/patient',
         meta: { title: '患者库', icon: 'list' }
       }

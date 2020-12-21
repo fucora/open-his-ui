@@ -114,7 +114,7 @@ export function getCurrentTimeType() {
     return '1'
   } else if (hour >= 12 && hour < 18) {
     return '2'
-  } else if (hour >= 0 && hour < 6) {
+  } else if (hour >= 18 && hour < 24) {
     return '3'
   }
 }

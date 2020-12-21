@@ -12,6 +12,7 @@ import './icons' // icon
 import './permission' // permission control
 import './utils/error-log' // error log
 import * as filters from './filters' // global filters
+import moment from 'moment'
 
 import { resetForm, addDateRange, selectDictLabel, handleTree, getAge, getCurrentTimeType } from '@/utils/his-utils'
 import { getDataByType } from '@/api/system/dict/data'
@@ -24,6 +25,7 @@ Vue.prototype.getDataByType = getDataByType // 加载全局的根据字典类型
 Vue.prototype.handleTree = handleTree // 挂载全局的构造树的JSON的方法
 Vue.prototype.getAge = getAge// 挂载全局的根据出生年月日计算年龄的方法
 Vue.prototype.getCurrentTimeType = getCurrentTimeType// 挂载全局计算时段的方法
+Vue.prototype.moment = moment
 // 挂载全局消息框
 Vue.prototype.msgSuccess = function(msg) {
   this.$message({ showClose: true, message: msg, type: 'success' })

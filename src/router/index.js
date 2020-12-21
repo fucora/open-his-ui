@@ -326,19 +326,19 @@ export const asyncRoutes = [
     children: [
       {
         path: 'registered',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/registration/index'),
         name: '/doctor/registered',
         meta: { title: '门诊挂号', icon: 'list' }
       },
       {
         path: 'registeredlist',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/registration/list'),
         name: '/doctor/registeredlist',
         meta: { title: '挂号列表', icon: 'list' }
       },
       {
         path: 'newcare',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/care/index'),
         name: '/doctor/newcare',
         meta: { title: '新开就诊', icon: 'list' }
       },

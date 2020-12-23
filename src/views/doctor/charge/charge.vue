@@ -56,7 +56,7 @@
         <el-button type="success" icon="el-icon-finished" @click="handleSelectAll">全选</el-button>
         <el-button type="success" icon="el-icon-finished" @click="handleUnSelectAll">取消全选</el-button>
         <el-button type="danger" icon="el-icon-bank-card" @click="handlePayWithCash">现金支付</el-button>
-        <el-button type="danger" icon="el-icon-bank-card" @click="handlePayWithZfb">支付宝支付</el-button>
+        <el-button type="danger" icon="el-icon-bank-card" @click="handlePayWithZfb">沙箱支付宝支付</el-button>
         <span style="margin-left:20px">订单总额:<span style="color:red;margin-left:20px">￥:{{ allAmount }}</span></span>
       </el-card>
       <!-- 工具结束开始 -->
@@ -93,7 +93,7 @@
     <div v-else style="text-align:center">请输入正确的挂号单ID查询</div>
 
     <el-dialog
-      title="请使用支付宝支付"
+      title="请使用沙箱支付宝支付"
       :visible.sync="openPay"
       center
       :close-on-click-modal="false"
@@ -112,7 +112,7 @@
       </el-form>
       <div style="text-align:center">
         <vue-qr :text="payObj.payUrl" :size="200" />
-        <div>请使用支付宝扫码</div>
+        <div>请使用沙箱支付宝扫码</div>
       </div>
     </el-dialog>
 
@@ -323,8 +323,8 @@ export default {
         })
         // 发送请求
         this.loading = true
-        this.loadingText = '订单创建并支付宝支付中'
-        this.$confirm('是否确定创建订单并使用支付宝支付?', '提示', {
+        this.loadingText = '订单创建并沙箱支付宝支付中'
+        this.$confirm('是否确定创建订单并使用沙箱支付宝支付?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'

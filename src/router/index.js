@@ -46,7 +46,8 @@ export const constantRoutes = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
+        // @/views/dashboard/index
+        component: () => import('@/views/statisics/revenue/index'),
         name: '首页',
         meta: { title: '首页', icon: 'dashboard', affix: true }
       }
@@ -169,26 +170,26 @@ export const asyncRoutes = [
     children: [
       {
         path: 'revenue',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/statisics/revenue/index'),
         name: '/statistics/revenue',
         meta: { title: '收支统计', icon: 'edit' }
       },
       {
         path: 'sales',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/statisics/drug/index'),
         name: '/statistics/sales',
         meta: { title: '药品销售统计', icon: 'list' },
         hidden: true
       },
       {
         path: 'check',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/statisics/check/index'),
         name: '/statistics/check',
         meta: { title: '检查项目统计', icon: 'list' }
       },
       {
         path: 'workload',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/statisics/workload/index'),
         name: '/statistics/workload',
         meta: { title: '工作量统计', icon: 'list' }
       }
@@ -296,19 +297,19 @@ export const asyncRoutes = [
     children: [
       {
         path: 'docheck',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/checkResult/newcheck'),
         name: '/check/docheck',
         meta: { title: '新开检查', icon: 'list' }
       },
       {
         path: 'checkresult',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/checkResult/checking'),
         name: '/check/checkresult',
         meta: { title: '检查结果录入', icon: 'list' }
       },
       {
         path: 'checklist',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/doctor/checkResult/checklist'),
         name: '/check/checklist',
         meta: { title: '检查结果查询', icon: 'list' }
       }
